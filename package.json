@@ -1,0 +1,36 @@
+{
+  "name": "coffee-house",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass src/scss:dist/css --style=expanded",
+    "sass:watch": "sass --watch src/scss:dist/css --style=expanded",
+    "js:copy": "cpy \"src/js/*.js\" dist/js/",
+    "js:watch": "nodemon --watch src/js --ext js --exec \"npm run js:copy\"",
+    "serve": "live-server --port=5500 --watch=dist,src/index.html --open=src/index.html",
+    "dev": "concurrently \"npm run sass:watch\" \"npm run js:watch\" \"npm run serve\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Veraveritvveru/coffee-house.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Veraveritvveru/coffee-house/issues"
+  },
+  "homepage": "https://github.com/Veraveritvveru/coffee-house#readme",
+  "devDependencies": {
+    "concurrently": "^9.2.0",
+    "cpy-cli": "^5.0.0",
+    "live-server": "^1.2.2",
+    "nodemon": "^3.1.10",
+    "sass": "^1.90.0",
+    "terser": "^5.43.1"
+  },
+  "dependencies": {
+    "normalize.css": "^8.0.1"
+  }
+}
