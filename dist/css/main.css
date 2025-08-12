@@ -5,10 +5,27 @@ h2 {
   line-height: 105%;
 }
 
-.link-menu__text, button, .nav__item, .header__menu span {
+h3 {
+  font-size: 6rem;
+  font-weight: 600;
+  line-height: 125%;
+}
+
+.card__price, h4 {
+  font-size: 2.4rem;
+  font-weight: 600;
+  line-height: 125%;
+}
+
+.button, .link-menu__text, .nav__item, .header__menu span {
   font-size: 1.6rem;
   font-weight: 600;
   line-height: 150%;
+}
+
+.slider__card {
+  display: flex;
+  flex-direction: column;
 }
 
 .header__wrapper {
@@ -107,12 +124,12 @@ h1 {
   color: #E1D4C9;
 }
 
-.enjoy__title span {
+.accent-text {
   color: #B0907A;
   font-style: italic;
 }
 
-h2 {
+.enjoy__title {
   max-width: 530px;
 }
 
@@ -131,6 +148,10 @@ h2 {
   border-radius: 100px;
   background-color: #E1D4C9;
   border: none;
+}
+
+.link-menu {
+  width: 200px;
 }
 
 .link-menu:hover .link-menu__text {
@@ -153,6 +174,49 @@ h2 {
 
 .link-menu:hover .link-menu__icon {
   opacity: 1;
+}
+
+.favorite {
+  margin-top: 100px;
+}
+
+.favorite__title {
+  text-align: center;
+}
+
+.slider {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.slider__card {
+  align-items: center;
+  max-width: 480px;
+  gap: 16px;
+}
+
+.card__img {
+  width: 100%;
+}
+
+.card__description {
+  text-align: center;
+}
+
+.slider__controls {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.control {
+  background-color: #403F3D;
+  height: 4px;
+  width: 40px;
+  border-radius: 100px;
 }
 
 @font-face {
@@ -212,7 +276,7 @@ body {
   padding: 15px 40px 0 40px;
 }
 
-button {
+.button {
   color: #403F3D;
   cursor: pointer;
 }

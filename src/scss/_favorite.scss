@@ -1,0 +1,50 @@
+@use 'variables' as *;
+@use 'placeholders';
+
+.favorite {
+  margin-top: 100px;
+}
+
+.favorite__title {
+  text-align: center;
+}
+
+.slider {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.slider__card {
+  @extend %flex-column;
+  align-items: center;
+  max-width: 480px;
+  gap: 16px;
+}
+
+.card__img {
+  width: 100%;
+}
+
+.card__description {
+  text-align: center;
+}
+
+.card__price {
+  @extend %text-h4;
+}
+
+.slider__controls {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.control {
+  background-color: $color-text-dark;
+  height: 4px;
+  width: 40px;
+  border-radius: 100px;
+}

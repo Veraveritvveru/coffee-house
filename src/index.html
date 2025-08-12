@@ -20,7 +20,7 @@
         <nav class="nav">
           <ul class="nav__list">
             <li class="nav__item">
-              <a href="#favourites">Favorite coffee</a>
+              <a href="#favorites">Favorite coffee</a>
             </li>
             <li class="nav__item">
               <a href="#about">About</a>
@@ -56,11 +56,11 @@
 
   <main>
     <div class="wrapper">
-      <section class="enjoy">
+      <section class="enjoy" id="enjoy">
         <div class="enjoy-container">
           <video src="assets/video/enjoy-video.webm" class="enjoy__video" autoplay loop muted></video>
           <div class="enjoy__content">
-            <h2 class="enjoy__title"><span>Enjoy</span> premium coffee at our charming cafe</h2>
+            <h2 class="enjoy__title"><span class="accent-text">Enjoy</span> premium coffee at our charming cafe</h2>
             <p class="enjoy__description">With its inviting atmosphere and delicious coffee options, the Coffee House
               Resource is a popular destination for coffee lovers and those seeking a warm and inviting space to enjoy
               their favorite beverage.</p>
@@ -69,11 +69,46 @@
                 <span class="link-menu__text">Menu</span>
                 <span class="link-menu__icon"></span>
               </div>
-
             </a>
           </div>
         </div>
+      </section>
 
+      <section class="favorite" id="favorite">
+        <h3 class="favorite__title">Choose your <span class="accent-text">favorite</span> coffee</h3>
+        <div class="slider">
+          <div class="button slider__btn-left">
+            <svg class="slider__svg" width="60" height="60" viewBox="0 0 60 60" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <rect x="0.5" y="0.5" width="59" height="59" rx="29.5" stroke="#665F55"></rect>
+              <path d="M36.5 30H24M24 30L30 24M24 30L30 36" stroke="#403F3D" stroke-linecap="round"
+                stroke-linejoin="round"></path>
+            </svg>
+          </div>
+          <div class="slider__inner">
+            <div class="slider__card">
+              <img src="assets/img/coffee-slider-1.png" alt="frappuccino" class="card__img">
+              <h4 class="card__title">S’mores Frappuccino</h4>
+              <p class="card__description">This new drink takes an espresso and mixes it with brown sugar and cinnamon
+                before being topped with oat milk.</p>
+              <p class="card__price">$5.50</p>
+            </div>
+
+          </div>
+          <div class="button slider__btn-right">
+            <svg class="slider__svg" width="60" height="60" viewBox="0 0 60 60" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <rect x="0.5" y="0.5" width="59" height="59" rx="29.5" stroke="#665F55"></rect>
+              <path d="M24 30H36.5M36.5 30L30.5 24M36.5 30L30.5 36" stroke="#403F3D" stroke-linecap="round"
+                stroke-linejoin="round"></path>
+            </svg>
+          </div>
+        </div>
+        <div class="slider__controls">
+          <div class="control"></div>
+          <div class="control"></div>
+          <div class="control"></div>
+        </div>
       </section>
     </div>
   </main>
