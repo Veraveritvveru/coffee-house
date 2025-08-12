@@ -1,0 +1,81 @@
+@use 'variables' as *;
+@use 'placeholders';
+
+.enjoy {
+  margin-top: 6px;
+}
+
+.enjoy-container {
+  position: relative;
+  max-width: 100%;
+
+  padding: 100px;
+}
+
+.enjoy__video {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -100;
+  border-radius: 40px;
+}
+
+.enjoy__content {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  color: $color-bg-body;
+}
+
+.enjoy__title span {
+  color: $color-text-accent;
+  font-style: italic;
+}
+
+h2 {
+  @extend %title-enjoy;
+  max-width: 530px;
+}
+
+.enjoy__description {
+  line-height: 150%;
+  max-width: 530px;
+}
+
+.link-menu__wrapper {
+  display: flex;
+  color: $color-text-dark;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 64px;
+  border-radius: 100px;
+  background-color: $color-bg-body;
+  border: none;
+}
+
+.link-menu:hover .link-menu__text {
+  transform: translateX(-7px);
+}
+
+.link-menu__text {
+  @extend %text-link-and-button;
+  transform: translateX(7px);
+  transition: transform .5s;
+}
+
+.link-menu__icon {
+  width: 20px;
+  height: 20px;
+  background-image: url('../assets/icons/coffee-cup.svg');
+  opacity: 0;
+  transition: opacity .5s;
+  margin-bottom: 3px;
+}
+
+.link-menu:hover .link-menu__icon {
+  opacity: 1;
+}

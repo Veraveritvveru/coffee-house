@@ -1,5 +1,11 @@
 @import '../../node_modules/normalize.css/normalize.css';
-.nav__item, .header__menu span {
+h2 {
+  font-size: 7.2rem;
+  font-weight: 600;
+  line-height: 105%;
+}
+
+.link-menu__text, button, .nav__item, .header__menu span {
   font-size: 1.6rem;
   font-weight: 600;
   line-height: 150%;
@@ -73,6 +79,82 @@ h1 {
   opacity: 1;
 }
 
+.enjoy {
+  margin-top: 6px;
+}
+
+.enjoy-container {
+  position: relative;
+  max-width: 100%;
+  padding: 100px;
+}
+
+.enjoy__video {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -100;
+  border-radius: 40px;
+}
+
+.enjoy__content {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  color: #E1D4C9;
+}
+
+.enjoy__title span {
+  color: #B0907A;
+  font-style: italic;
+}
+
+h2 {
+  max-width: 530px;
+}
+
+.enjoy__description {
+  line-height: 150%;
+  max-width: 530px;
+}
+
+.link-menu__wrapper {
+  display: flex;
+  color: #403F3D;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 64px;
+  border-radius: 100px;
+  background-color: #E1D4C9;
+  border: none;
+}
+
+.link-menu:hover .link-menu__text {
+  transform: translateX(-7px);
+}
+
+.link-menu__text {
+  transform: translateX(7px);
+  transition: transform 0.5s;
+}
+
+.link-menu__icon {
+  width: 20px;
+  height: 20px;
+  background-image: url("../assets/icons/coffee-cup.svg");
+  opacity: 0;
+  transition: opacity 0.5s;
+  margin-bottom: 3px;
+}
+
+.link-menu:hover .link-menu__icon {
+  opacity: 1;
+}
+
 @font-face {
   font-family: "Inter";
   src: url("../fonts/Inter-Regular.woff") format("woff"), url("../fonts/Inter-Regular.woff2") format("woff2");
@@ -128,6 +210,11 @@ body {
   margin: 0 auto;
   max-width: 1440px;
   padding: 15px 40px 0 40px;
+}
+
+button {
+  color: #403F3D;
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=main.css.map */
