@@ -76,8 +76,9 @@
 
       <section class="favorite" id="favorite">
         <h3 class="favorite__title">Choose your <span class="accent-text">favorite</span> coffee</h3>
-        <div class="slider">
-          <div class="button slider__btn-left">
+
+        <div class="slider-container">
+          <div class="button slider__btn-prev">
             <svg class="slider__svg" width="60" height="60" viewBox="0 0 60 60" fill="none"
               xmlns="http://www.w3.org/2000/svg">
               <rect x="0.5" y="0.5" width="59" height="59" rx="29.5" stroke="#665F55"></rect>
@@ -85,17 +86,34 @@
                 stroke-linejoin="round"></path>
             </svg>
           </div>
-          <div class="slider__inner">
-            <div class="slider__card">
-              <img src="assets/img/coffee-slider-1.png" alt="frappuccino" class="card__img">
-              <h4 class="card__title">S’mores Frappuccino</h4>
-              <p class="card__description">This new drink takes an espresso and mixes it with brown sugar and cinnamon
-                before being topped with oat milk.</p>
-              <p class="card__price">$5.50</p>
-            </div>
 
+          <div class="slider">
+            <div class="slider__line">
+              <div class="slider__card">
+                <img src="assets/img/coffee-slider-1.png" alt="frappuccino" class="card__img">
+                <h4 class="card__title">S’mores Frappuccino</h4>
+                <p class="card__description">This new drink takes an espresso and mixes it with brown sugar and cinnamon
+                  before being topped with oat milk.</p>
+                <p class="card__price">$5.50</p>
+              </div>
+              <div class="slider__card">
+                <img src="assets/img/coffee-slider-2.png" alt="Caramel Macchiato" class="card__img">
+                <h4 class="card__title">Caramel Macchiato</h4>
+                <p class="card__description">Fragrant and unique classic espresso with rich caramel-peanut syrup, with
+                  cream under whipped thick foam.</p>
+                <p class="card__price">$5.00</p>
+              </div>
+              <div class="slider__card">
+                <img src="assets/img/coffee-slider-3.png" alt="Ice coffee" class="card__img">
+                <h4 class="card__title">Ice coffee</h4>
+                <p class="card__description">A popular summer drink that tones and invigorates. Prepared from coffee,
+                  milk and ice.</p>
+                <p class="card__price">$4.50</p>
+              </div>
+            </div>
           </div>
-          <div class="button slider__btn-right">
+
+          <div class="button slider__btn-next">
             <svg class="slider__svg" width="60" height="60" viewBox="0 0 60 60" fill="none"
               xmlns="http://www.w3.org/2000/svg">
               <rect x="0.5" y="0.5" width="59" height="59" rx="29.5" stroke="#665F55"></rect>
@@ -103,18 +121,28 @@
                 stroke-linejoin="round"></path>
             </svg>
           </div>
+
         </div>
         <div class="slider__controls">
-          <div class="control"></div>
-          <div class="control"></div>
-          <div class="control"></div>
+          <div class="control-wrapper">
+            <div class="control" id="control-1"></div>
+          </div>
+          <div class="control-wrapper">
+            <div class="control" id="control-2"></div>
+          </div>
+                    <div class="control-wrapper">
+            <div class="control" id="control-3"></div>
+          </div>
         </div>
+
+
       </section>
     </div>
   </main>
 
 
   <script src="../dist/js/main.js"></script>
+  <script src="../dist/js/slider.js"></script>
 </body>
 
 </html>
