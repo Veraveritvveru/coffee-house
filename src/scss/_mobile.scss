@@ -1,3 +1,4 @@
+@use 'variables' as *;
 @use 'placeholders';
 
 .mobile {
@@ -11,7 +12,6 @@
 
   @media screen and (max-width: 1200px) {
     flex-direction: column;
-    
   }
 }
 
@@ -34,23 +34,33 @@
   border-radius: 100px;
   transition: all 0.5s ease-out;
   padding: 12px 20px;
+
+  &:hover {
+    background-color: $color-bg-container;
+    color: $color-text-light;
+
+    path {
+      fill: $color-text-light;
+    }
+  }
 }
 
 .mobile-link__wrapper {
   @extend %flex-column;
   justify-content: center;
+
+  & span:first-child {
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 140%;
+  }
+
+  & span:last-child {
+    font-weight: 600;
+    line-height: 150%;
+  }
 }
 
-.mobile-link__wrapper span:first-child {
-  font-size: 1rem;
-  font-weight: 600;
-  line-height: 140%;
-}
-
-.mobile-link__wrapper span:last-child {
-  font-weight: 600;
-  line-height: 150%;
-}
 
 .mobile__image {
   @media screen and (max-width: 650px) {
@@ -58,8 +68,17 @@
   }
 
   img {
-      @media screen and (max-width: 650px) {
-    width: 348px;
+    @media screen and (max-width: 650px) {
+      width: 348px;
+    }
   }
+}
+
+.mobile__link:hover {
+  background-color: $color-bg-container;
+  color: $color-text-light;
+
+  path {
+    fill: $color-text-light;
   }
 }

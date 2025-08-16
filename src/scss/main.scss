@@ -4,6 +4,7 @@
 @use 'favorite';
 @use 'about';
 @use 'mobile';
+@use 'footer';
 @import '../../node_modules/normalize.css/normalize.css';
 
 
@@ -63,6 +64,7 @@ body {
   line-height: 150%;
   color: $color-text-dark;
   background-color: $color-bg-body;
+  padding-bottom: 40px;
 }
 
 .wrapper {
