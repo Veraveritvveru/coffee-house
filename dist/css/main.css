@@ -17,13 +17,13 @@ h4, .card__price {
   line-height: 125%;
 }
 
-.contacts__list, .button, .link-menu__text, .nav__item, .header__menu span {
+.button, .contacts__list, .link-menu__text, .nav__item, .header__menu span {
   font-size: 1.6rem;
   font-weight: 600;
   line-height: 150%;
 }
 
-.contacts__list, .mobile__content, .mobile-link__wrapper, .slider__card {
+.menu-section, .contacts__list, .mobile__content, .mobile-link__wrapper, .slider__card {
   display: flex;
   flex-direction: column;
 }
@@ -662,6 +662,85 @@ footer {
   width: 115%;
 }
 
+.menu-section {
+  align-items: center;
+  gap: 40px;
+  margin-top: 20px;
+}
+
+.menu__title {
+  font-size: 6rem;
+  text-align: center;
+  max-width: 800px;
+}
+
+.menu__tabs {
+  display: flex;
+  gap: 16px;
+}
+
+.tab-input {
+  display: none;
+}
+
+.tab-label {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  cursor: pointer;
+  padding: 7px 16px 7px 8px;
+  border-radius: 100px;
+  border: 1px solid #C1B6AD;
+  font-weight: 600;
+  transition: all 0.5s;
+}
+
+.tab-icon {
+  display: block;
+  width: 30px;
+  height: 30px;
+  background-color: #C1B6AD;
+  background-repeat: no-repeat;
+  border-radius: 50%;
+  background-position: center;
+}
+
+label[for=coffee] .tab-icon {
+  background-image: url("../assets/icons/coffee.svg");
+}
+
+label[for=tea] .tab-icon {
+  background-image: url("../assets/icons/tea.svg");
+}
+
+label[for=dessert] .tab-icon {
+  background-image: url("../assets/icons/dessert.svg");
+}
+
+.tab-label:hover {
+  background-color: #665F55;
+  color: #E1D4C9;
+  border-color: transparent;
+}
+
+.tab-label:hover .tab-icon {
+  background-color: #E1D4C9;
+}
+
+#coffee:checked ~ label[for=coffee],
+#tea:checked ~ label[for=tea],
+#dessert:checked ~ label[for=dessert] {
+  background-color: #665F55;
+  color: #E1D4C9;
+  border-color: transparent;
+}
+
+#coffee:checked ~ label[for=coffee] .tab-icon,
+#tea:checked ~ label[for=tea] .tab-icon,
+#dessert:checked ~ label[for=dessert] .tab-icon {
+  background-color: #E1D4C9;
+}
+
 @font-face {
   font-family: "Inter";
   src: url("../fonts/Inter-Regular.woff") format("woff"), url("../fonts/Inter-Regular.woff2") format("woff2");
@@ -739,10 +818,6 @@ body {
 .scroll-hidden {
   height: 100dvh;
   overflow: hidden;
-}
-
-.none {
-  display: none;
 }
 
 /*# sourceMappingURL=main.css.map */
