@@ -13,6 +13,16 @@ footer {
   border-radius: 40px;
   padding: 100px;
   color: $color-text-light;
+
+  @media screen and (max-width: 1000px) {
+    flex-direction: column;
+    padding: 100px 60px;
+  }
+
+  @media screen and (max-width: 690px) {
+    padding: 60px 16px;
+    gap: 40px;
+  }
 }
 
 .footer__description {
@@ -50,6 +60,11 @@ footer {
 
 .contact-us {
   padding-top: 31px;
+
+  @media screen and (max-width: 690px) {
+    padding: 0;
+  }
+
 }
 
 .contacts__list {

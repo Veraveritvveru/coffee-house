@@ -13,6 +13,10 @@
   @media screen and (max-width: 1200px) {
     flex-direction: column;
   }
+
+  @media screen and (max-width: 480px) {
+    gap: 40px;
+  }
 }
 
 .mobile__content {
@@ -23,6 +27,10 @@
 .mobile__links {
   display: flex;
   gap: 20px;
+
+  @media screen and (max-width: 480px) {
+    flex-direction: column;
+  }
 }
 
 .mobile__link {
