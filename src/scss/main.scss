@@ -89,6 +89,10 @@ h2 {
 
 h3 {
   @extend %text-h3;
+
+  @media screen and (max-width: 690px) {
+    font-size: 3.2rem;
+  }
 }
 
 h4 {
