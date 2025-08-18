@@ -90,3 +90,9 @@ h3 {
 h4 {
   @extend %text-h4;
 }
+
+.scroll-hidden {
+  height: 100dvh;
+  overflow: hidden;
+}
+

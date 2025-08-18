@@ -20,16 +20,16 @@
         <nav class="nav">
           <ul class="nav__list">
             <li class="nav__item">
-              <a href="#favorites">Favorite coffee</a>
+              <a href="#favorites" class="nav__link">Favorite coffee</a>
             </li>
             <li class="nav__item">
-              <a href="#about">About</a>
+              <a href="#about" class="nav__link">About</a>
             </li>
             <li class="nav__item">
-              <a href="#mobile app">Mobile app</a>
+              <a href="#mobile" class="nav__link">Mobile app</a>
             </li>
             <li class="nav__item">
-              <a href="#contact us">Contact us</a>
+              <a href="#contact-us" class="nav__link">Contact us</a>
             </li>
           </ul>
         </nav>
@@ -51,6 +51,10 @@
           </svg>
         </a>
       </div>
+      <button class="burger-btn">
+        <span class="burger-line"></span>
+        <span class="burger-line"></span>
+      </button>
     </div>
   </header>
 
@@ -74,7 +78,7 @@
         </div>
       </section>
 
-      <section class="favorite" id="favorite">
+      <section class="favorite" id="favorites">
         <h3 class="favorite__title">Choose your <span class="accent-text">favorite</span> coffee</h3>
 
         <div class="slider-container">
@@ -157,7 +161,7 @@
         </div>
       </section>
 
-      <section class="mobile">
+      <section class="mobile" id="mobile">
         <div class="mobile-container">
           <div class="mobile__content">
             <h3 class="mobile__title"><span class="accent-text">Download</span> our apps to start ordering</h3>
@@ -206,7 +210,7 @@
         </div>
       </section>
 
-      <footer id="footer">
+      <footer id="contact-us">
         <div class="footer__container">
           <div class="footer__description">
             <h3 class="footer__title">Sip, Savor, Smile. <span class="accent-text">It’s coffee time!</span></h3>
@@ -288,7 +292,7 @@
   </main>
 
 
-  <script src="../dist/js/main.js"></script>
+  <script src="../dist/js/burger.js"></script>
   <script src="../dist/js/slider.js"></script>
 </body>
 
