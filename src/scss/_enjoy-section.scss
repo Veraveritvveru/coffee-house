@@ -8,8 +8,15 @@
 .enjoy-container {
   position: relative;
   max-width: 100%;
-
   padding: 100px;
+
+  @media screen and (max-width: 1000px) {
+    padding: 100px 60px;
+  }
+
+  @media screen and (max-width: 690px) {
+    padding: 60px 16px;
+  }
 }
 
 .enjoy__video {
@@ -37,6 +44,10 @@
 
 .enjoy__title {
   max-width: 530px;
+
+  @media screen and (max-width: 690px) {
+    font-size: 4.2rem;
+  }
 }
 
 .enjoy__description {

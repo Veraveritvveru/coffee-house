@@ -71,6 +71,10 @@ body {
   margin: 0 auto;
   max-width: 1440px;
   padding: 15px 40px 0 40px;
+
+  @media screen and (max-width: 690px) {
+    padding: 16px;
+  }
 }
 
 .button {
@@ -95,4 +99,3 @@ h4 {
   height: 100dvh;
   overflow: hidden;
 }
-
