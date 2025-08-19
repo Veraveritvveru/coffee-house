@@ -664,6 +664,7 @@ footer {
 
 .menu {
   align-items: center;
+  gap: 40px;
 }
 
 .menu-section {
@@ -750,7 +751,6 @@ label[for=dessert] .tab-icon {
   flex-wrap: wrap;
   justify-content: center;
   gap: 40px;
-  margin-top: 40px;
 }
 
 .product-card {
@@ -818,6 +818,29 @@ label[for=dessert] .tab-icon {
     transform: translateY(-20px);
   }
 }
+.load-more {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+  border-radius: 100px;
+  border: 1px solid #665F55;
+  background-color: transparent;
+  transition: all 0.8s;
+}
+.load-more:hover {
+  background-color: #665F55;
+}
+.load-more:hover svg path {
+  stroke: #C1B6AD;
+}
+
+.hidden {
+  display: none;
+}
+
 @font-face {
   font-family: "Inter";
   src: url("../fonts/Inter-Regular.woff") format("woff"), url("../fonts/Inter-Regular.woff2") format("woff2");

@@ -4,7 +4,7 @@
 .menu {
   @extend %flex-column;
   align-items: center;
-
+  gap: 40px;
 }
 
 .menu-section {
@@ -92,10 +92,7 @@ label[for=dessert] .tab-icon {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  // grid-template-columns: repeat(auto-fit, 310px);
-  // min-height: 507px;
   gap: 40px;
-  margin-top: 40px;
 }
 
 .product-card {
@@ -164,4 +161,29 @@ label[for=dessert] .tab-icon {
     opacity: 0;
     transform: translateY(-20px);
   }
+}
+
+.load-more {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+  border-radius: 100px;
+  border: 1px solid $color-border-dark;
+  background-color: transparent;
+  transition: all 0.8s;
+
+  &:hover {
+    background-color: $color-border-dark;
+
+    & svg path {
+      stroke: $color-border-light;
+    }
+  }
+}
+
+.hidden {
+  display: none;
 }

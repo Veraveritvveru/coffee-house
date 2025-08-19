@@ -1,28 +1,44 @@
 const menuList = document.querySelector('.menu__list');
 const tabs = document.querySelector('.menu__tabs');
+const loadMoreBtn = document.querySelector('.load-more');
+console.log(loadMoreBtn)
 
-let currentCategory;
-let products;
+let currentCategory = 'coffee';
+let products = [];
+let visibleCount = 4;
+let filteredProducts = [];
+
+function debounce(func, delay) {
+  let timer;
+  return function (...args) {
+    clearTimeout(timer);
+    timer = setTimeout(() => {
+      func.apply(this, args);
+    }, delay)
+  }
+}
 
 async function loadProducts() {
   try {
     const response = await fetch('./assets/data/products.json');
     products = await response.json();
 
-    firstRender(products);
+    renderProducts(products);
   } catch (error) {
     console.log('Ошибка при загрузке данных: ' + error)
   }
 }
 
-function firstRender(products) {
-  products.filter((product) => product.category === 'coffee').map((item, index) => {
-    createCard(item, index, menuList);
-  })
+function getVisibleCount(list) {
+  return (window.innerWidth < 1089) ? Math.min(4, list.length) : list.length;
 }
+
 
 function renderProducts(products) {
   const oldCards = [...menuList.children];
+
+  filteredProducts = products.filter((product) => product.category === currentCategory);
+  visibleCount = getVisibleCount(filteredProducts);
 
   if (oldCards.length > 0) {
     oldCards.forEach((card, id) => {
@@ -32,24 +48,31 @@ function renderProducts(products) {
     });
 
     setTimeout(() => {
-      menuList.innerHTML = '';
-      products
-        .filter((product) => product.category === currentCategory)
-        .forEach((item, index) => {
-          const prod = createCard(item, index, menuList);
-          prod.style.animationDelay = `${index * 0.01}s`;
-        });
+      drawCards(filteredProducts.slice(0, visibleCount))
     }, oldCards.length * 30 + 300)
   } else {
-    products
-      .filter((product) => product.category === currentCategory)
-      .forEach((item, index) => {
-        const prod = createCard(item, index, menuList);
-        prod.style.animationDelay = `${index * 0.01}s`;
-      });
+    drawCards(filteredProducts.slice(0, visibleCount))
+  }
+
+  toggleLoadMoreBtn(filteredProducts);
+}
+
+function toggleLoadMoreBtn(filtered) {
+  if (visibleCount <= 4 && filtered.length > 4) {
+    loadMoreBtn.classList.remove('hidden');
+  }
+  else {
+    loadMoreBtn.classList.add('hidden');
   }
 }
 
+function drawCards(items) {
+  menuList.innerHTML = '';
+  items.forEach((item, index) => {
+    const prod = createCard(item, index, menuList);
+    prod.style.animationDelay = `${index * 0.01}s`;
+  });
+}
 
 function createCard(product, index, parent) {
   const card = document.createElement('li');
@@ -58,9 +81,9 @@ function createCard(product, index, parent) {
 
   const imageWrapper = document.createElement('div');
   imageWrapper.classList.add('product__img-wrapper')
-
   const img = document.createElement('img');
   img.src = `./assets/img/${product.category}-${index + 1}.jpg`;
+  img.alt = product.name;
   img.classList.add('product__img');
   imageWrapper.append(img);
 
@@ -74,14 +97,14 @@ function createCard(product, index, parent) {
   const description = document.createElement('p');
   description.classList.add('product__descr');
   description.textContent = `${product.description}`;
-
+  
   const price = document.createElement('h4');
   price.classList.add('product__price');
   price.textContent = `$${product.price}`;
 
   content.append(title, description, price);
-
   card.append(imageWrapper, content);
+
   return card;
 }
 
@@ -89,6 +112,15 @@ tabs.addEventListener('change', (event) => {
   currentCategory = event.target.value;
   renderProducts(products);
 })
+
+loadMoreBtn.addEventListener('click', () => {
+  drawCards(filteredProducts);
+  loadMoreBtn.classList.add('hidden');
+})
+
+window.addEventListener('resize', debounce(() => {
+  renderProducts(products)
+}, 200))
 
 
 loadProducts();
