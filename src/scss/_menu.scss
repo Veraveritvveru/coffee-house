@@ -25,54 +25,19 @@
   gap: 16px;
 }
 
-.tab-input {
-  display: none;
-}
 
-.tab-label {
-  display: flex;
-  gap: 8px;
-  align-items: center;
-  cursor: pointer;
-  padding: 7px 16px 7px 8px;
-  border-radius: 100px;
-  border: 1px solid $color-border-light;
-  font-weight: 600;
-  transition: all .5s;
-}
-
-.tab-icon {
-  display: block;
-  width: 30px;
-  height: 30px;
-
-  background-color: $color-border-light;
-  background-repeat: no-repeat;
-  border-radius: 50%;
-  background-position: center;
-}
-
-label[for=coffee] .tab-icon {
+label[for=coffee] .label-circle {
   background-image: url('../assets/icons/coffee.svg');
 }
 
-label[for=tea] .tab-icon {
+label[for=tea] .label-circle {
   background-image: url('../assets/icons/tea.svg');
 }
 
-label[for=dessert] .tab-icon {
+label[for=dessert] .label-circle {
   background-image: url('../assets/icons/dessert.svg');
 }
 
-.tab-label:hover {
-  background-color: $color-border-dark;
-  color: $color-border-light;
-  border-color: transparent;
-}
-
-.tab-label:hover .tab-icon {
-  background-color: $color-bg-body;
-}
 
 #coffee:checked~label[for=coffee],
 #tea:checked~label[for=tea],
@@ -82,9 +47,9 @@ label[for=dessert] .tab-icon {
   border-color: transparent;
 }
 
-#coffee:checked~label[for=coffee] .tab-icon,
-#tea:checked~label[for=tea] .tab-icon,
-#dessert:checked~label[for=dessert] .tab-icon {
+#coffee:checked~label[for=coffee] .label-circle,
+#tea:checked~label[for=tea] .label-circle,
+#dessert:checked~label[for=dessert] .label-circle {
   background-color: $color-bg-body;
 }
 

@@ -1,22 +1,15 @@
+import { debounce } from "./utils.js";
+import { openModal } from "./modal.js";
+
 const menuList = document.querySelector('.menu__list');
 const tabs = document.querySelector('.menu__tabs');
 const loadMoreBtn = document.querySelector('.load-more');
-console.log(loadMoreBtn)
 
 let currentCategory = 'coffee';
 let products = [];
 let visibleCount = 4;
 let filteredProducts = [];
 
-function debounce(func, delay) {
-  let timer;
-  return function (...args) {
-    clearTimeout(timer);
-    timer = setTimeout(() => {
-      func.apply(this, args);
-    }, delay)
-  }
-}
 
 async function loadProducts() {
   try {
@@ -32,7 +25,6 @@ async function loadProducts() {
 function getVisibleCount(list) {
   return (window.innerWidth < 1089) ? Math.min(4, list.length) : list.length;
 }
-
 
 function renderProducts(products) {
   const oldCards = [...menuList.children];
@@ -97,16 +89,21 @@ function createCard(product, index, parent) {
   const description = document.createElement('p');
   description.classList.add('product__descr');
   description.textContent = `${product.description}`;
-  
+
   const price = document.createElement('h4');
   price.classList.add('product__price');
   price.textContent = `$${product.price}`;
 
   content.append(title, description, price);
   card.append(imageWrapper, content);
+  card.addEventListener('click', () => {
+    const src = card.firstElementChild.firstElementChild.src;
+    openModal(product, src);
+  });
 
   return card;
 }
+
 
 tabs.addEventListener('change', (event) => {
   currentCategory = event.target.value;

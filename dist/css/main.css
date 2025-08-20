@@ -23,7 +23,13 @@ h4, .card__price {
   line-height: 150%;
 }
 
-.menu, .menu-section, .product-card, .contacts__list, .mobile__content, .mobile-link__wrapper, .slider__card {
+.modal__info {
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 140%;
+}
+
+.modal__content, .modal__descr, .modal__form, .menu, .menu-section, .product-card, .contacts__list, .mobile__content, .mobile-link__wrapper, .slider__card {
   display: flex;
   flex-direction: column;
 }
@@ -684,52 +690,16 @@ footer {
   gap: 16px;
 }
 
-.tab-input {
-  display: none;
-}
-
-.tab-label {
-  display: flex;
-  gap: 8px;
-  align-items: center;
-  cursor: pointer;
-  padding: 7px 16px 7px 8px;
-  border-radius: 100px;
-  border: 1px solid #C1B6AD;
-  font-weight: 600;
-  transition: all 0.5s;
-}
-
-.tab-icon {
-  display: block;
-  width: 30px;
-  height: 30px;
-  background-color: #C1B6AD;
-  background-repeat: no-repeat;
-  border-radius: 50%;
-  background-position: center;
-}
-
-label[for=coffee] .tab-icon {
+label[for=coffee] .label-circle {
   background-image: url("../assets/icons/coffee.svg");
 }
 
-label[for=tea] .tab-icon {
+label[for=tea] .label-circle {
   background-image: url("../assets/icons/tea.svg");
 }
 
-label[for=dessert] .tab-icon {
+label[for=dessert] .label-circle {
   background-image: url("../assets/icons/dessert.svg");
-}
-
-.tab-label:hover {
-  background-color: #665F55;
-  color: #C1B6AD;
-  border-color: transparent;
-}
-
-.tab-label:hover .tab-icon {
-  background-color: #E1D4C9;
 }
 
 #coffee:checked ~ label[for=coffee],
@@ -740,9 +710,9 @@ label[for=dessert] .tab-icon {
   border-color: transparent;
 }
 
-#coffee:checked ~ label[for=coffee] .tab-icon,
-#tea:checked ~ label[for=tea] .tab-icon,
-#dessert:checked ~ label[for=dessert] .tab-icon {
+#coffee:checked ~ label[for=coffee] .label-circle,
+#tea:checked ~ label[for=tea] .label-circle,
+#dessert:checked ~ label[for=dessert] .label-circle {
   background-color: #E1D4C9;
 }
 
@@ -841,6 +811,118 @@ label[for=dessert] .tab-icon {
   display: none;
 }
 
+.modal {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  inset: 0;
+  background-color: rgba(64, 63, 61, 0.8);
+}
+
+.modal__overlay {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+}
+
+.modal__container {
+  display: flex;
+  z-index: 2;
+  gap: 20px;
+  max-width: 800px;
+  background-color: #E1D4C9;
+  border-radius: 40px;
+  padding: 16px;
+}
+
+.modal__image-wrap {
+  overflow: hidden;
+  width: 310px;
+  height: 310px;
+}
+
+.modal__img {
+  width: 100%;
+  transform: scale(1);
+  border-radius: 40px;
+}
+
+.modal__content {
+  gap: 20px;
+  max-width: 438px;
+}
+
+.modal__descr {
+  gap: 12px;
+}
+
+.modal__form {
+  gap: 20px;
+}
+
+.modal__input-wrapper {
+  display: flex;
+  gap: 8px;
+  padding-top: 8px;
+}
+
+#s:checked ~ label[for=s],
+#m:checked ~ label[for=m],
+#l:checked ~ label[for=l] {
+  background-color: #665F55;
+  color: #E1D4C9;
+  border-color: transparent;
+}
+
+#s:checked ~ label[for=s] .label-circle,
+#m:checked ~ label[for=m] .label-circle,
+#l:checked ~ label[for=l] .label-circle {
+  background-color: #E1D4C9;
+  color: #403F3D;
+}
+
+#Sugar:checked ~ label[for=Sugar],
+#Cinnamon:checked ~ label[for=Cinnamon],
+#Syrup:checked ~ label[for=Syrup] {
+  background-color: #665F55;
+  color: #E1D4C9;
+  border-color: transparent;
+}
+
+#Sugar:checked ~ label[for=Sugar] .label-circle,
+#Cinnamon:checked ~ label[for=Cinnamon] .label-circle,
+#Syrup:checked ~ label[for=Syrup] .label-circle {
+  background-color: #E1D4C9;
+  color: #403F3D;
+}
+
+.modal__price {
+  display: flex;
+  justify-content: space-between;
+}
+
+.modal__info {
+  border-top: 1px solid #C1B6AD;
+  padding-top: 12px;
+  padding-left: 24px;
+  background: url("../assets/icons/info-empty.svg") 0px 12px no-repeat;
+}
+
+.modal__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  cursor: pointer;
+  background-color: transparent;
+  border: 1px solid #665F55;
+  border-radius: 100px;
+  transition: all 0.5s ease-out;
+  padding: 12px 20px;
+}
+
 @font-face {
   font-family: "Inter";
   src: url("../fonts/Inter-Regular.woff") format("woff"), url("../fonts/Inter-Regular.woff2") format("woff2");
@@ -918,6 +1000,43 @@ body {
 .scroll-hidden {
   height: 100dvh;
   overflow: hidden;
+}
+
+.input {
+  display: none;
+}
+
+.label {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  cursor: pointer;
+  padding: 7px 16px 7px 8px;
+  border-radius: 100px;
+  border: 1px solid #C1B6AD;
+  font-weight: 600;
+  transition: all 0.5s;
+}
+.label:hover {
+  background-color: #665F55;
+  color: #C1B6AD;
+  border-color: transparent;
+}
+.label:hover .label-circle {
+  background-color: #E1D4C9;
+  color: #403F3D;
+}
+
+.label-circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  background-color: #C1B6AD;
+  background-repeat: no-repeat;
+  border-radius: 50%;
+  background-position: center;
 }
 
 /*# sourceMappingURL=main.css.map */

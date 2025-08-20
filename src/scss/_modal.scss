@@ -1,0 +1,118 @@
+@use 'variables' as *;
+@use 'placeholders';
+
+.modal {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  inset: 0;
+  background-color: rgba(64, 63, 61, 0.80);
+}
+
+.modal__overlay {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+}
+
+.modal__container {
+  display: flex;
+  z-index: 2;
+  gap: 20px;
+  max-width: 800px;
+  background-color: $color-bg-body;
+  border-radius: 40px;
+  padding: 16px;
+}
+
+.modal__image-wrap {
+  overflow: hidden;
+  width: 310px;
+  height: 310px;
+}
+
+.modal__img {
+  width: 100%;
+  transform: scale(1);
+  border-radius: 40px;
+}
+
+.modal__content {
+  @extend %flex-column;
+  gap: 20px;
+  max-width: 438px;
+}
+
+.modal__descr {
+  @extend %flex-column;
+  gap: 12px;
+}
+
+.modal__form {
+  @extend %flex-column;
+  gap: 20px;
+}
+
+.modal__input-wrapper {
+  display: flex;
+  gap: 8px;
+  padding-top: 8px;
+}
+
+#s:checked~label[for=s],
+#m:checked~label[for=m],
+#l:checked~label[for=l] {
+  background-color: $color-border-dark;
+  color: $color-bg-body;
+  border-color: transparent;
+}
+
+#s:checked~label[for=s] .label-circle,
+#m:checked~label[for=m] .label-circle,
+#l:checked~label[for=l] .label-circle {
+  background-color: $color-bg-body;
+  color: $color-text-dark;
+}
+
+#Sugar:checked~label[for=Sugar],
+#Cinnamon:checked~label[for=Cinnamon],
+#Syrup:checked~label[for=Syrup] {
+  background-color: $color-border-dark;
+  color: $color-bg-body;
+  border-color: transparent;
+}
+
+#Sugar:checked~label[for=Sugar] .label-circle,
+#Cinnamon:checked~label[for=Cinnamon] .label-circle,
+#Syrup:checked~label[for=Syrup] .label-circle {
+  background-color: $color-bg-body;
+  color: $color-text-dark;
+}
+
+.modal__price {
+  display: flex;
+  justify-content: space-between;
+}
+
+.modal__info {
+  @extend %text-caption;
+  border-top: 1px solid $color-border-light;
+  padding-top: 12px;
+  padding-left: 24px;
+  background: url('../assets/icons/info-empty.svg') 0px 12px no-repeat;
+}
+
+.modal__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  cursor: pointer;
+  background-color: transparent;
+  border: 1px solid $color-border-dark;
+  border-radius: 100px;
+  transition: all 0.5s ease-out;
+  padding: 12px 20px;
+}
