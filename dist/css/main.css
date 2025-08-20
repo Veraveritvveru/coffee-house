@@ -680,9 +680,13 @@ footer {
 }
 
 .menu__title {
-  font-size: 6rem;
   text-align: center;
   max-width: 800px;
+}
+@media screen and (max-width: 690px) {
+  .menu__title {
+    font-size: 3.2rem;
+  }
 }
 
 .menu__tabs {
@@ -842,6 +846,11 @@ label[for=dessert] .label-circle {
   width: 310px;
   height: 310px;
 }
+@media screen and (max-width: 690px) {
+  .modal__image-wrap {
+    display: none;
+  }
+}
 
 .modal__img {
   width: 100%;
@@ -852,6 +861,11 @@ label[for=dessert] .label-circle {
 .modal__content {
   gap: 20px;
   max-width: 438px;
+}
+@media screen and (max-width: 900px) {
+  .modal__content {
+    max-width: 326px;
+  }
 }
 
 .modal__descr {
@@ -864,6 +878,7 @@ label[for=dessert] .label-circle {
 
 .modal__input-wrapper {
   display: flex;
+  flex-wrap: wrap;
   gap: 8px;
   padding-top: 8px;
 }

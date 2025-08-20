@@ -31,6 +31,10 @@
   overflow: hidden;
   width: 310px;
   height: 310px;
+
+  @media screen and (max-width: 690px) {
+    display: none;
+  }
 }
 
 .modal__img {
@@ -43,6 +47,10 @@
   @extend %flex-column;
   gap: 20px;
   max-width: 438px;
+
+  @media screen and (max-width: 900px) {
+    max-width: 326px;
+  }
 }
 
 .modal__descr {
@@ -57,6 +65,7 @@
 
 .modal__input-wrapper {
   display: flex;
+  flex-wrap: wrap;
   gap: 8px;
   padding-top: 8px;
 }
