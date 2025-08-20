@@ -1,5 +1,6 @@
 import { debounce } from "./utils.js";
 import { openModal } from "./modal.js";
+import productsData from "/src/assets/data/products.json";
 
 const body = document.body;
 const burgerBtn = document.querySelector('.burger-btn');
@@ -11,7 +12,6 @@ const tabs = document.querySelector('.menu__tabs');
 const loadMoreBtn = document.querySelector('.load-more');
 
 let currentCategory = 'coffee';
-let products = [];
 let visibleCount = 4;
 let filteredProducts = [];
 
@@ -30,16 +30,7 @@ navList.addEventListener('click', () => {
   }
 });
 
-async function loadProducts() {
-  try {
-    const response = await fetch('/src/assets/data/products.json');
-    products = await response.json();
-
-    renderProducts(products);
-  } catch (error) {
-    console.log('Ошибка при загрузке данных: ' + error)
-  }
-}
+renderProducts(productsData);
 
 function getVisibleCount(list) {
   return (window.innerWidth < 1089) ? Math.min(4, list.length) : list.length;
@@ -126,7 +117,7 @@ function createCard(product, index, parent) {
 
 tabs.addEventListener('change', (event) => {
   currentCategory = event.target.value;
-  renderProducts(products);
+  renderProducts(productsData);
 })
 
 loadMoreBtn.addEventListener('click', () => {
@@ -135,8 +126,5 @@ loadMoreBtn.addEventListener('click', () => {
 })
 
 window.addEventListener('resize', debounce(() => {
-  renderProducts(products)
+  renderProducts(productsData)
 }, 200))
-
-
-loadProducts();
