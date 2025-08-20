@@ -32,7 +32,7 @@ navList.addEventListener('click', () => {
 
 async function loadProducts() {
   try {
-    const response = await fetch('./assets/data/products.json');
+    const response = await fetch('/src/assets/data/products.json');
     products = await response.json();
 
     renderProducts(products);
@@ -93,7 +93,7 @@ function createCard(product, index, parent) {
   const imageWrapper = document.createElement('div');
   imageWrapper.classList.add('product__img-wrapper')
   const img = document.createElement('img');
-  img.src = `./assets/img/${product.category}-${index + 1}.jpg`;
+  img.src = `/src/assets/img/${product.category}-${index + 1}.jpg`;
   img.alt = product.name;
   img.classList.add('product__img');
   imageWrapper.append(img);
