@@ -1,3 +1,4 @@
+import { createNode } from "./utils.js";
 import { debounce } from "./utils.js";
 import { openModal } from "./modal.js";
 import productsData from "../data/products.json";
@@ -76,43 +77,24 @@ function drawCards(items) {
 }
 
 function createCard(product, index, parent) {
-  const card = document.createElement('li');
-  card.classList.add('product-card', 'fade-in');
-  parent.appendChild(card);
-
-  const imageWrapper = document.createElement('div');
-  imageWrapper.classList.add('product__img-wrapper')
-  const img = document.createElement('img');
+  const card = createNode({ tag: 'li', classNames: ['product-card', 'fade-in'], parent: parent });
+  const imageWrapper = createNode({ classNames: ['product__img-wrapper'], parent: card });
+  const img = createNode({ tag: 'img', classNames: ['product__img'], parent: imageWrapper });
   img.src = `/assets/img/${product.category}-${index + 1}.jpg`;
   img.alt = product.name;
-  img.classList.add('product__img');
-  imageWrapper.append(img);
 
-  const content = document.createElement('div');
-  content.classList.add('product__content');
+  const content = createNode({ classNames: ['product__content'], parent: card });
 
-  const title = document.createElement('h4');
-  title.classList.add('product__title');
-  title.textContent = `${product.name}`;
+  createNode({ tag: 'h4', text: product.name, classNames: ['product__title'], parent: content });
+  createNode({ tag: 'p', text: product.description, classNames: ['product__descr'], parent: content });
+  createNode({ tag: 'h4', text: product.price, classNames: ['product__price'], parent: content });
 
-  const description = document.createElement('p');
-  description.classList.add('product__descr');
-  description.textContent = `${product.description}`;
-
-  const price = document.createElement('h4');
-  price.classList.add('product__price');
-  price.textContent = `$${product.price}`;
-
-  content.append(title, description, price);
-  card.append(imageWrapper, content);
   card.addEventListener('click', () => {
     const src = card.firstElementChild.firstElementChild.src;
     openModal(product, src);
   });
-
   return card;
 }
-
 
 tabs.addEventListener('change', (event) => {
   currentCategory = event.target.value;
