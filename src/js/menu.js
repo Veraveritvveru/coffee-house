@@ -1,6 +1,6 @@
 import { debounce } from "./utils.js";
 import { openModal } from "./modal.js";
-import productsData from "/src/assets/data/products.json";
+import productsData from "../data/products.json";
 
 const body = document.body;
 const burgerBtn = document.querySelector('.burger-btn');
@@ -14,7 +14,6 @@ const loadMoreBtn = document.querySelector('.load-more');
 let currentCategory = 'coffee';
 let visibleCount = 4;
 let filteredProducts = [];
-
 
 burgerBtn.addEventListener('click', () => {
   body.classList.add('scroll-hidden');
@@ -84,7 +83,7 @@ function createCard(product, index, parent) {
   const imageWrapper = document.createElement('div');
   imageWrapper.classList.add('product__img-wrapper')
   const img = document.createElement('img');
-  img.src = `/src/assets/img/${product.category}-${index + 1}.jpg`;
+  img.src = `/assets/img/${product.category}-${index + 1}.jpg`;
   img.alt = product.name;
   img.classList.add('product__img');
   imageWrapper.append(img);
