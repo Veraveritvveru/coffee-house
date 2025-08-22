@@ -9,9 +9,12 @@ A responsive and interactive two pages website with valid semantic responsive we
 ## Features
 - The **burger menu** on both pagest
 - The **Carousel** on the home page
-- The **Category switching** for products on the menu page:
+- The **Category switching** for products on the menu page
 - The **Loading more** products on the menu page
-- The **Modal** for selected product on the menu page: 
+- The **Modal** for selected product on the menu page
+
+![Анимация](https://github.com/user-attachments/assets/b2a2f3a9-35a4-4635-a127-31a1d60f28f9)
+
 
 
 ### Stack:
