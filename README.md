@@ -1,20 +1,19 @@
 ## Coffee House
 
-A responsive and interactive two pages website with valid semantic responsive web design. 
+A responsive and interactive two-page website with valid semantic web design. 
 
 [Check the Live Demo](https://coffee-house-black.vercel.app/)
 
 <img width="1421" height="762" alt="image" src="https://github.com/user-attachments/assets/2e747e46-43e5-40ec-8f6f-3a078f1dac44" />
 
 ## Features
-- The **burger menu** on both pagest
-- The **Carousel** on the home page
-- The **Category switching** for products on the menu page
-- The **Loading more** products on the menu page
-- The **Modal** for selected product on the menu page
+- **Burger menu** on both pages
+- **Carousel** on the home page
+- **Category switching** for products on the menu page
+- **Load more** products functionality on the menu page
+- **Modal** window for selected product on the menu page
 
 ![Анимация](https://github.com/user-attachments/assets/b2a2f3a9-35a4-4635-a127-31a1d60f28f9)
-
 
 
 ### Stack:
